@@ -1,0 +1,81 @@
+models:
+  lstm:
+    base_units: 50
+    dropout_rate: 0.2
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 100
+    sequence_length: 60
+  
+  advanced_lstm:
+    base_units: 100
+    dropout_rate: 0.3
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 150
+    sequence_length: 60
+  
+  gru:
+    base_units: 50
+    dropout_rate: 0.2
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 100
+    sequence_length: 60
+  
+  cnn_lstm:
+    filters: 64
+    kernel_size: 3
+    pool_size: 2
+    lstm_units: 50
+    dropout_rate: 0.2
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 100
+    sequence_length: 60
+  
+  transformer:
+    d_model: 64
+    num_heads: 4
+    dropout_rate: 0.1
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 100
+    sequence_length: 60
+    
+  ensemble:
+    models: ['lstm', 'gru', 'cnn_lstm', 'transformer']
+    weights: [0.4, 0.3, 0.2, 0.1]
+    
+sentiment:
+  cache_duration: 3600
+  sources:
+    cryptopanic: 0.7
+    lunarcrush: 0.8
+    newsapi: 0.6
+    coindesk: 0.9
+    cointelegraph: 0.8
+    
+data:
+  timeframes:
+    '1h': 24
+    '1d': 7
+    '1m': 30
+  min_periods:
+    '1h': 168
+    '1d': 30
+    '1m': 12 
+
+trading:
+  default_pairs:
+    - BTCUSDT
+    - ETHUSDT
+    - BNBUSDT
+  timeframes:
+    - 1h
+    - 1d
+    - 1m
+  modes:
+    - trade
+    - backtest
+    - analyze 

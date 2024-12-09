@@ -1,0 +1,14 @@
+[Unit]
+Description=Crypto Trading Bot
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/trading_bot
+ExecStart=/home/pi/trading_bot/venv/bin/python3 /home/pi/trading_bot/trading_bot.py
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target 

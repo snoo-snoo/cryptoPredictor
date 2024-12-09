@@ -1,0 +1,12 @@
+numpy>=1.19.2
+pandas>=1.2.0
+tensorflow>=2.4.0
+scikit-learn>=0.24.0
+PyYAML>=5.4.1
+python-binance>=1.0.0
+pydantic>=1.8.0
+numba>=0.53.0  # Optional, for performance optimization 
+plotly>=5.0.0
+kaleido>=0.2.1  # For static image export
+matplotlib>=3.3.0  # For fallback static plots
+seaborn>=0.11.0
